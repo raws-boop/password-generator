@@ -5,10 +5,7 @@
 application in practice 
 <IMG SRC="Assets/deployedapplication.gif">
 
-![ deployed application in practice](deployedapplication.gif) / ! [](deployedapplication.gif)
-Commit and gif should be seen.
-
-deployed application
+link to deployed application
 https://raws-boop.github.io/password-generator/
 - - -
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
