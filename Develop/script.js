@@ -13,12 +13,36 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+//list variables
+//array to hold lowercase character options
+var lowercase = "qwertyuiopasdfghjklzxcvbnm".split("");
+
+//array to hold uppercase character options
+var uppercase = "QWERTYUIOPASDFGHJKLZXCVBNM".split("");
+
+//array to hold special character options
+var specChar = "!@#$%^&*".split("");
+
+//array to hold numbers
+var numArr = "0123456789".split("");
+
+//array to hold successful character elements
+successPass = []
+
+//variables to hold 'confirmed' user response
+var uppercaseChoice = true;
+var numChoice = true;
+var specChoice = true;
+
+//created variable to hold the final password
+var password = [];
+
 function generatePassword() {
 
-// create a display prompt to request user password length //how many characters would you like to contaim
+// create a display prompt to request user password length //how many characters would you like to contain
 var passwordLength = prompt ("Indicate desired password length");
 
-if (passwordLength >= 8 && passwordLength <=128 && osMaM([passwordLength] == false)) {
+if (passwordLength >= 8 && passwordLength <=128 && isNaN(passwordLength) == false) {
  userChoices();
 
  for (var i = 0; i < passwordLength; i++) {
@@ -27,7 +51,7 @@ if (passwordLength >= 8 && passwordLength <=128 && osMaM([passwordLength] == fal
 }
 
 //print secure password
-  return "password" ;
+  return password ;
 
 } else {
 alert("Password must be between 8 and 128 characters");
@@ -38,27 +62,27 @@ generatePassword();
 function userChoices(){
 
 //click okay to confirm Uppercase
-var uppercaseChoice = confirm ("Does your password contain one or more upper case letters?")
+var uppercaseChoice = confirm ("Will your password contain one or more upper case letters?");
 //click okay to confirm number
-var numChoice = confirm ("Does your password contain one or more numbers?")
+var numChoice = confirm ("Will your password contain one or more numbers?");
 //click okay to confirm special character
-var specChoice = confirm ("Does your password contain one or more special characters?")
+var specChoice = confirm ("Will your password contain one or more special characters?");
 
 //use a confirm - yes = true or no = untrue, yes = store as variable within an array
 if (uppercaseChoice ===true && numChoice === true && specChoice === true) {
-successPass = lowercaseChoice.concat(uppercase, numArr, specChar);
+successPass = lowercase.concat(uppercase, numArr, specChar);
 } else if (uppercaseChoice === true && numChoice === true && specChoice === false){
-  successPass = lowercaseChoice.concat(uppercase, numArr);
+  successPass = lowercase.concat(uppercase, numArr);
 } else if (uppercaseChoice === true && numChoice === false && specChoice === false){
-  successPass = lowercaseChoice.concat(uppercase);
+  successPass = lowercase.concat(uppercase);
 } else if (uppercaseChoice === false && numChoice === true && specChoice === true){
-  successPass = lowercaseChoice.concat(numArr, specChar);
+  successPass = lowercase.concat(numArr, specChar);
 } else if (uppercaseChoice === false && numChoice === false && specChoice === true){
-  successPass = lowercaseChoice.concat(specChar);
+  successPass = lowercase.concat(specChar);
 } else if (uppercaseChoice === true && numChoice === false && specChoice === true){
-  successPass = lowercaseChoice.concat(uppercase, specChar);
+  successPass = lowercase.concat(uppercase, specChar);
 } else if (uppercaseChoice === false && numChoice === true && specChoice === false){
-  successPass = lowercaseChoice.concat(numArr);
+  successPass = lowercase.concat(numArr);
 } else{
   successPass = lowercase
 }
