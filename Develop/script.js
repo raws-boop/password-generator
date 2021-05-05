@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+  
   passwordText.value = password;
 
 }
@@ -26,7 +26,10 @@ var specChar = "!@#$%^&*".split("");
 //array to hold numbers
 var numArr = "0123456789".split("");
 
-//array to hold successful character elements
+
+
+function generatePassword() {
+  //array to hold successful character elements
 successPass = []
 
 //variables to hold 'confirmed' user response
@@ -37,10 +40,12 @@ var specChoice = true;
 //created variable to hold the final password
 var password = [];
 
-function generatePassword() {
 
 // create a display prompt to request user password length //how many characters would you like to contain
 var passwordLength = prompt ("Indicate desired password length");
+
+//clear previous password
+// passwordText.value = '';
 
 if (passwordLength >= 8 && passwordLength <=128 && isNaN(passwordLength) == false) {
  userChoices();
